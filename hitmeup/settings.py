@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-import django_heroku
+# import django_heroku
 print( '-' * 90 + '\nReading your setting file.\n')
 import os
 
@@ -21,14 +21,14 @@ print('BASE_DIR : ',BASE_DIR)
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '_$fkzulsr&o62%9n@^mb0p51@htq=kuglknqlc#4mnv6o#95#5'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = '_$fkzulsr&o62%9n@^mb0p51@htq=kuglknqlc#4mnv6o#95#5'
+# SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = False
+# DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,21 +76,21 @@ WSGI_APPLICATION = 'hitmeup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME':'hitmeupdb',
-#         'USER':'postgres',
-#         'PASSWORD':'12345',
-#         'HOST':'localhost',
-#         'PORT':'',
-#     }
-# }
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'hitmeupdb',
+        'USER':'postgres',
+        'PASSWORD':'12345',
+        'HOST':'localhost',
+        'PORT':'',
+    }
 }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=config('DATABASE_URL')
+#     )
+# }
 
 
 # Password validation
@@ -129,6 +129,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, "static"),
+]
+
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-django_heroku.settings(locals())
