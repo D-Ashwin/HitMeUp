@@ -28,7 +28,7 @@ SECRET_KEY = '_$fkzulsr&o62%9n@^mb0p51@htq=kuglknqlc#4mnv6o#95#5'
 DEBUG = True
 # DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['metatabi.herokuapp.com']
 
 
 # Application definition
