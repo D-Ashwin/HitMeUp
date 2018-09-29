@@ -76,16 +76,28 @@ WSGI_APPLICATION = 'hitmeup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME':'hitmeupdb',
+#         'USER':'postgres',
+#         'PASSWORD':'12345',
+#         'HOST':'localhost',
+#         'PORT':'',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'hitmeupdb',
-        'USER':'postgres',
-        'PASSWORD':'12345',
-        'HOST':'localhost',
-        'PORT':'',
+        'ENGINE': 'postgres://ziildinqbvcvkp:f2697c6e47ec8e6f93498bb5da73d3cbf545570b48eea8d205efe8be962331b7@ec2-50-17-234-234.compute-1.amazonaws.com:5432/ddpjq1ed3obpt',
+        'NAME':'ddpjq1ed3obpt',
+        'USER':'ziildinqbvcvkp',
+        'PASSWORD':'f2697c6e47ec8e6f93498bb5da73d3cbf545570b48eea8d205efe8be962331b7',
+        'HOST':'ec2-50-17-234-234.compute-1.amazonaws.com',
+        'PORT':'5432',
     }
 }
+
 # DATABASES = {
 #     'default': dj_database_url.config(
 #         default=config('DATABASE_URL')
