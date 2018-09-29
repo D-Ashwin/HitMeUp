@@ -1,1 +1,1 @@
-web: gunicorn hitmeup.wsgi
+web: gunicorn hitmeup.wsgi --log-file -
