@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'hitmeup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'postgres://ziildinqbvcvkp:f2697c6e47ec8e6f93498bb5da73d3cbf545570b48eea8d205efe8be962331b7@ec2-50-17-234-234.compute-1.amazonaws.com:5432/ddpjq1ed3obpt',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME':'ddpjq1ed3obpt',
         'USER':'ziildinqbvcvkp',
         'PASSWORD':'f2697c6e47ec8e6f93498bb5da73d3cbf545570b48eea8d205efe8be962331b7',
